@@ -1,0 +1,34 @@
+---
+title: "choosefunc"
+author: "sanjivek"
+date: "July 7, 2015"
+output: word_document
+---
+
+
+factfunc=function(n){
+
+if(n==0){ return(1)}
+if(n<0){return(Inf)}
+i<-1
+tot<-n
+while(n>1){
+tot<-tot*i
+n<-n-1
+i<-n
+}
+return(tot)
+
+}
+
+choosefunc=function(n,r){
+if (r>n){
+return('You are choosing more from a small population')
+}
+else{chooseVal=factfunc(n)/(factfunc(n-r)*factfunc(r))
+return(chooseVal)}
+}
+
+n<-5
+r<-3
+print(choosefunc(n,r))
